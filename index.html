@@ -3,123 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TURBO26ROBO - Run. Jump. Collect. Survive. | Kolkata 2026</title>
-<meta name="description" content="TURBO26ROBO - Kolkata's Own Robo Runner Game. Run, Jump, Collect Coins & Beat High Score. Play Now!">
+<title>TURBO26ROBO - Run. Jump. Collect. Survive. | Kolkata's Robo Runner</title>
+<meta name="description" content="TURBO26ROBO - Kolkata's Own Robo Runner Game. Refer & Earn, Leaderboard, Play & Win TURBO26 Tokens.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-body{background:#050810;color:#fff;overflow-x:hidden}
+body{background:#070b1a;color:#fff;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-.top{background:#00e5ff;color:#000;text-align:center;padding:8px;font-weight:800;font-size:13px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:#0a0f1e;position:sticky;top:0;z-index:99}
-.logo{font-size:22px;font-weight:900}.logo span{color:#00e5ff}
-nav a.btn{background:#00e5ff;color:#000;padding:9px 16px;border-radius:20px;font-weight:800;font-size:14px}
-.hero{text-align:center;padding:50px 5% 30px;background:radial-gradient(circle at 50% 0%,#123a5e,#050810 70%)}
-.hero .badge{background:#1a2b45;border:1px solid #00e5ff;color:#00e5ff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700}
-.hero h1{font-size:52px;line-height:1;margin:18px 0 10px}.hero h1 span{color:#00e5ff}
-.hero p{color:#b0b8c8;font-size:17px;max-width:600px;margin:0 auto 22px}
-.play-btn{display:inline-block;background:#00e5ff;color:#000;font-weight:900;padding:15px 32px;border-radius:30px;font-size:18px;box-shadow:0 0 30px #00e5ff66}
-.play-btn2{display:inline-block;margin-top:12px;border:1px solid #fff;padding:12px 26px;border-radius:30px;font-weight:700}
-.stats{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
-.stat{background:#0d1526;border:1px solid #222;padding:14px 18px;border-radius:14px;min-width:110px}.stat b{font-size:20px;color:#00e5ff}.stat small{color:#aaa}
-.section{padding:45px 5%;max-width:1000px;margin:auto}
-.section h2{text-align:center;font-size:30px;margin-bottom:8px}.section h2 span{color:#00e5ff}
-.section .sub{text-align:center;color:#aaa;margin-bottom:28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.card{background:#0d1526;border:1px solid #1e2a44;padding:22px;border-radius:18px}
-.card h3{margin-bottom:8px}.card p{color:#aaa;font-size:14px;line-height:1.6}
-.card .icon{font-size:32px;margin-bottom:10px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;text-align:center}
-.step{background:#0d1526;padding:22px;border-radius:18px;border:1px solid #1e2a44}.step b{font-size:38px;color:#00e5ff}
-.posters{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-.poster{background:linear-gradient(160deg,#00e5ff,#0066ff);color:#000;padding:28px;border-radius:20px;text-align:center}
-.poster:nth-child(2){background:linear-gradient(160deg,#ffcc00,#ff6600)}
-.poster:nth-child(3){background:linear-gradient(160deg,#00ff99,#0066ff);color:#fff}
-.poster h3{font-size:22px}.poster p{font-size:13px;margin:10px 0}
-.poster a{background:#000;color:#fff;padding:10px 18px;border-radius:20px;display:inline-block;font-weight:800;font-size:13px}
-.banner{background:linear-gradient(90deg,#00e5ff,#7c3aed);color:#000;padding:30px 5%;text-align:center;border-radius:20px;margin:0 5%}
-.banner h2{font-size:26px}.banner a{background:#000;color:#fff;padding:12px 22px;border-radius:25px;display:inline-block;margin-top:14px;font-weight:800}
-footer{background:#02030a;padding:35px 5%;text-align:center;color:#888;font-size:13px;line-height:1.8}
-footer a{color:#00e5ff;font-weight:700}
-@media(max-width:600px){.hero h1{font-size:38px}}
+.top{background:#ffcc00;color:#000;text-align:center;padding:8px;font-weight:800;font-size:14px}
+header{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:auto}
+.logo{font-size:26px;font-weight:900;letter-spacing:1px}.logo span{color:#ffcc00}
+.btn{background:#ffcc00;color:#000;padding:10px 18px;border-radius:50px;font-weight:800;font-size:14px}
+.btn2{background:#25D366;color:#fff;padding:10px 18px;border-radius:50px;font-weight:800;font-size:14px}
+.hero{max-width:1100px;margin:20px auto;padding:20px;text-align:center}
+.hero h1{font-size:52px;line-height:1.05;font-weight:900}.hero h1 span{color:#ffcc00}
+.hero p{margin:16px 0;color:#cbd5e1;font-size:17px}
+.robot{font-size:90px;animation:float 2s infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px 0}
+.stat{background:#111a3a;border:1px solid #26306a;padding:14px 20px;border-radius:16px;min-width:140px}
+.stat b{font-size:24px;color:#ffcc00}.stat small{color:#94a3b8}
+.card{max-width:1100px;margin:20px auto;background:#111a3a;border:1px solid #26306a;border-radius:20px;padding:22px}
+.card h2{font-size:26px;margin-bottom:8px}.card h2 span{color:#ffcc00}
+.card p{color:#cbd5e1;font-size:15px;line-height:1.6}
+.flex{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;align-items:center}
+input{flex:1;min-width:220px;padding:13px;border-radius:12px;border:1px solid #333;background:#070b1a;color:#fff;font-size:14px}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+th,td{padding:12px;text-align:left;border-bottom:1px solid #26306a}
+th{color:#ffcc00}.rank{background:#ffcc00;color:#000;font-weight:900;padding:4px 10px;border-radius:20px;font-size:13px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:14px}
+.feat{background:#0a1030;padding:16px;border-radius:16px;border:1px solid #26306a}
+.feat b{font-size:18px}
+.links{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+footer{text-align:center;padding:20px;color:#94a3b8;font-size:13px}
+@media(max-width:600px){.hero h1{font-size:36px}}
 </style>
 </head>
 <body>
-
-<div class="top">🤖 TURBO26ROBO IS LIVE - KOLKATA 2026 | DOWNLOAD NOW</div>
-
-<nav>
-<div class="logo">TURBO<span>26</span>ROBO 🤖</div>
-<a class="btn" href="https://play.google.com/store" target="_blank">▶ PLAY NOW</a>
-</nav>
+<div class="top">🔥 V2 LIVE - REFER & EARN 100 COINS - LEADERBOARD TOP 10 🔥</div>
+<header>
+<div class="logo">🤖 TURBO<span>26</span>ROBO</div>
+<a class="btn" href="#refer">Refer & Earn</a>
+</header>
 
 <div class="hero">
-<div class="badge">✦ FROM KOLKATA • ROBO RUNNER GAME • 2026</div>
-<h1>TURBO26<span>ROBO</span><br>RUN. JUMP. COLLECT.</h1>
-<p>Robo ko daudao, coins collect karo, obstacles se bacho aur High Score banao! Kolkata ka sabse tez Robo Runner Game.</p>
-<a class="play-btn" href="https://play.google.com/store" target="_blank">▶ DOWNLOAD ON GOOGLE PLAY</a><br>
-<a class="play-btn2" href="https://turbo26.in" target="_blank">🌐 Visit TURBO26 Token - turbo26.in</a>
+<div class="robot">🤖</div>
+<h1>RUN. JUMP.<br><span>COLLECT. SURVIVE.</span></h1>
+<p>Kolkata's Own Robo Runner Game | 2026<br>Refer karo, Coins kamao, Leaderboard me TOP pe aao!</p>
 <div class="stats">
-<div class="stat"><b>100K+</b><br><small>Downloads</small></div>
-<div class="stat"><b>4.8 ★</b><br><small>Rating</small></div>
+<div class="stat"><b id="downloads">1,28,450+</b><br><small>Downloads</small></div>
+<div class="stat"><b>4.9 ★</b><br><small>Rating</small></div>
 <div class="stat"><b>50+</b><br><small>Levels</small></div>
-<div class="stat"><b>Offline</b><br><small>No Internet</small></div>
+<div class="stat"><b>26M</b><br><small>TURBO26 Supply</small></div>
+</div>
+<div class="flex" style="justify-content:center">
+<a class="btn" href="https://turbo-26-robo.vercel.app" style="font-size:16px;padding:14px 28px">▶️ PLAY NOW - FREE</a>
+<a class="btn2" onclick="shareWA()">💬 WhatsApp Share</a>
 </div>
 </div>
 
-<div class="section">
-<h2>HOW TO <span>PLAY?</span></h2>
-<p class="sub">Sirf 3 Step me Pro Bano!</p>
-<div class="steps">
-<div class="step"><b>1</b><h3>🏃 RUN</h3><p>Robo ko auto-run pe chhod do, tum sirf control karo.</p></div>
-<div class="step"><b>2</b><h3>🪙 COLLECT</h3><p>Jitne zyada Coins, utna zyada Score aur Reward.</p></div>
-<div class="step"><b>3</b><h3>🏆 WIN</h3><p>Obstacles se bacho, High Score banao, Doston ko harao.</p></div>
+<div class="card" id="refer">
+<h2>🎁 <span>REFER & EARN</span> - 100 Coins FREE</h2>
+<p>Apna link dost ko bhejo. Dost khelega = Tumko <b style="color:#ffcc00">100 Coins</b> + Dost ko bhi <b style="color:#ffcc00">100 Coins</b>. Jitna share, utna kamao!</p>
+<div class="flex">
+<input id="refLink" value="https://turbo-26-robo.vercel.app/?ref=TURBO26" readonly>
+<button class="btn" onclick="copyRef()">📋 Copy Link</button>
+<button class="btn2" onclick="shareWA()">WhatsApp Pe Bhejo</button>
+</div>
+<p id="copyMsg" style="color:#25D366;margin-top:8px;font-weight:700"></p>
+<p style="margin-top:10px">🏆 <b>Top Referrer ko har Sunday TURBO26 Token Gift!</b> Screenshot Telegram pe bhejo.</p>
+</div>
+
+<div class="card">
+<h2>🏆 <span>LEADERBOARD</span> - TOP 10 PLAYERS</h2>
+<p>Is hafte ke sabse tez Robo Runners! Tumhara naam yaha chahiye? Game khelo, High Score ka screenshot Telegram pe bhejo!</p>
+<table>
+<tr><th>Rank</th><th>Player</th><th>Score</th><th>Coins</th></tr>
+<tr><td><span class="rank">🥇 1</span></td><td>RoboKing_Kolkata</td><td>98,500</td><td>12,400</td></tr>
+<tr><td><span class="rank">🥈 2</span></td><td>Turbo_Ashu</td><td>87,200</td><td>10,100</td></tr>
+<tr><td><span class="rank">🥉 3</span></td><td>DashQueen</td><td>76,800</td><td>9,300</td></tr>
+<tr><td>4</td><td>HowrahRunner</td><td>65,400</td><td>7,800</td></tr>
+<tr><td>5</td><td>SaltLakePro</td><td>58,900</td><td>6,500</td></tr>
+<tr><td>6</td><td>ParkStreetBoy</td><td>51,200</td><td>5,900</td></tr>
+<tr><td>7</td><td>DumDumDash</td><td>47,600</td><td>5,200</td></tr>
+<tr><td>8</td><td>NewTownNinja</td><td>42,100</td><td>4,800</td></tr>
+<tr><td>9</td><td>SealdahSpeed</td><td>38,900</td><td>4,100</td></tr>
+<tr><td>10</td><td>BehalaBolt</td><td>33,500</td><td>3,600</td></tr>
+</table>
+<div class="flex"><a class="btn" href="https://t.me/TURBO26Official">📤 Apna Score Bhejo - Telegram</a></div>
+</div>
+
+<div class="card">
+<h2>🎮 <span>HOW TO PLAY</span></h2>
+<div class="features">
+<div class="feat"><b>🏃 Run</b><p>Robo ko auto-run pe chhodo, bas jump karo!</p></div>
+<div class="feat"><b>🪙 Collect</b><p>Coins + Power-ups collect karo.</p></div>
+<div class="feat"><b>🚧 Dodge</b><p>Obstacles se bacho, 1 hit = Game Over!</p></div>
+<div class="feat"><b>🏆 Win</b><p>High Score banao, Leaderboard pe chadho!</p></div>
 </div>
 </div>
 
-<div class="section">
-<h2>GAME <span>FEATURES</span></h2>
-<p class="sub">Kyu TURBO26ROBO sabse alag hai?</p>
-<div class="grid">
-<div class="card"><div class="icon">🤖</div><h3>Super Fast Robo</h3><p>Jump, Dash aur Slide - ekdum smooth controls, bachcha bhi khel lega.</p></div>
-<div class="card"><div class="icon">🪙</div><h3>Daily Coins</h3><p>Roz khelo, roz coins jeeto. Daily rewards aur bonus levels.</p></div>
-<div class="card"><div class="icon">🏙️</div><h3>Kolkata City Map</h3><p>Green City Race jaisa hi apna Kolkata wala map - Howrah Bridge se Park Street tak.</p></div>
-<div class="card"><div class="icon">📴</div><h3>Offline Play</h3><p>Internet nahi hai? Koi tension nahi. Bina internet ke bhi full game chalega.</p></div>
-<div class="card"><div class="icon">🎮</div><h3>50+ Levels</h3><p>Har level naya challenge, naya speed, naya maze.</p></div>
-<div class="card"><div class="icon">🔥</div><h3>High Score Battle</h3><p>Apne doston ka score todo aur Leaderboard pe No.1 bano.</p></div>
+<div class="card">
+<h2>🔗 <span>LINKS</span></h2>
+<div class="links">
+<a class="btn" href="https://turbo-26-robo.vercel.app">🌐 Website</a>
+<a class="btn" href="https://turbo26.in">🪙 TURBO26 Token</a>
+<a class="btn2" href="https://t.me/TURBO26Official">✈️ Telegram</a>
+<a class="btn" href="https://x.com/TURBO26officia1">𝕏 Twitter</a>
 </div>
+<p style="margin-top:14px">Token: TURBO26 - 26M Supply | LP Locked 99.5% - 1 Year<br>Contract: 0x5a11075C985404288497c59778179b8fE2559d6d</p>
 </div>
 
-<div class="banner">
-<h2>Robo se pyaar ho gaya? Ab Car Race bhi khelo! 🏎️</h2>
-<p>Green City Race - Kolkata ki apni Car Racing Game</p>
-<a href="https://play.google.com/store" target="_blank">PLAY GREEN CITY RACE →</a>
-</div>
+<footer>© 2026 TURBO26ROBO - Made in Kolkata, India<br>This game is for entertainment only.</footer>
 
-<div class="section">
-<h2>OFFICIAL <span>POSTERS</span></h2>
-<p class="sub">Download & Share on X, Telegram, WhatsApp</p>
-<div class="posters">
-<div class="poster"><h3>🤖 TURBO26ROBO</h3><p>RUN • JUMP • COLLECT<br>From Kolkata 2026</p><a href="#">DOWNLOAD POSTER</a></div>
-<div class="poster"><h3>🏎️ GREEN CITY RACE</h3><p>Kolkata Car Racing Game<br>Play Now</p><a href="#">DOWNLOAD POSTER</a></div>
-<div class="poster"><h3>🪙 TURBO26 TOKEN</h3><p>26M Supply | LP Locked 99.5%<br>turbo26.in</p><a href="https://turbo26.in" target="_blank">VISIT TURBO26.IN</a></div>
-</div>
-</div>
-
-<div class="section" style="text-align:center">
-<h2>DOWNLOAD <span>NOW</span></h2>
-<p class="sub">Free Hai! Abhi Download Karo Aur Khelna Shuru Karo!</p>
-<a class="play-btn" href="https://play.google.com/store" target="_blank">▶ GET IT ON GOOGLE PLAY</a>
-<p style="margin-top:16px;color:#aaa;font-size:13px">Android 7.0+ • Size: ~85 MB • Free • Offline Supported</p>
-</div>
-
-<footer>
-<b style="color:#fff;font-size:18px">TURBO26ROBO 🤖</b><br>
-<a href="https://t.me/TURBO26Official" target="_blank">Join Telegram @TURBO26Official</a> • 
-<a href="https://x.com/TURBO26officia1" target="_blank">Follow X @TURBO26officia1</a><br>
-Website: <a href="https://turbo26.in">turbo26.in</a> • Token: TURBO26 • 26M Supply • Audited & Verified<br>
-© 2026 TURBO26ROBO - Kolkata's Own Robo Runner Game | Made in Kolkata, India<br>
-This game is for entertainment only. Play responsibly.
-</footer>
-
+<script>
+function copyRef(){
+  var c=document.getElementById("refLink");c.select();c.setSelectionRange(0,99999);
+  navigator.clipboard.writeText(c.value);
+  document.getElementById("copyMsg").innerText="✅ Link Copy Ho Gaya! Ab WhatsApp pe bhejo!";
+}
+function shareWA(){
+  var txt="🤖 TURBO26ROBO Khelo! Kolkata ka Robo Runner Game! %0A🏆 Refer & Earn 100 Coins %0A👉 https://turbo-26-robo.vercel.app/?ref=TURBO26 %0A#TURBO26ROBO";
+  window.open("https://wa.me/?text="+txt,"_blank");
+}
+// Live counter animation
+let n=128450; setInterval(()=>{ n+=Math.floor(Math.random()*3)+1; document.getElementById("downloads").innerText=n.toLocaleString("en-IN")+"+"; },3000);
+</script>
 </body>
 </html>
