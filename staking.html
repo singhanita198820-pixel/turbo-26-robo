@@ -1,0 +1,78 @@
+<!-- staking.html - TURBO26ROBO ke liye -->
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Staking - TURBO26ROBO</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
+body{background:#0f0a0a;color:#fff}
+.topbar{background:#ff8a00;text-align:center;padding:8px;font-weight:800;font-size:13px;color:#000}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;max-width:1000px;margin:auto}
+.logo{font-weight:900;font-size:20px}.logo span{color:#FFD500}
+.nav a{background:#FFD500;color:#000;padding:8px 16px;border-radius:20px;text-decoration:none;font-weight:800;font-size:13px}
+.hero{text-align:center;padding:30px 15px}
+.hero h1{font-size:38px;line-height:1.1}.hero h1 span{color:#FFD500}
+.hero p{color:#aaa;margin-top:10px}
+.chain{display:flex;gap:10px;justify-content:center;margin:18px 0;flex-wrap:wrap}
+.chain button{padding:10px 18px;border-radius:20px;border:none;font-weight:800;cursor:pointer}
+.chain button.active{outline:3px solid #fff}
+.contract{background:#1a1a1a;padding:12px;border-radius:10px;max-width:600px;margin:auto;font-size:12px;color:#aaa;word-break:break-all}
+.contract b{color:#FFD500}
+.calc{background:#1a1a1a;border:2px solid #FFD500;padding:20px;border-radius:16px;max-width:600px;margin:20px auto}
+.calc input{width:100%;padding:13px;margin:8px 0;background:#000;border:1px solid #444;color:#fff;border-radius:10px;font-size:17px}
+.days{display:flex;gap:8px;margin:10px 0}.days button{flex:1;padding:11px;background:#000;color:#fff;border:1px solid #444;border-radius:10px;cursor:pointer;font-weight:700}
+.days button.active{background:#FFD500;color:#000}
+.stake-btn{width:100%;padding:14px;background:#FFD500;border:none;border-radius:10px;font-weight:900;font-size:16px;cursor:pointer;margin-top:10px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:900px;margin:20px auto;padding:0 15px}
+@media(max-width:700px){.plans{grid-template-columns:1fr}.hero h1{font-size:30px}}
+.card{background:#1a1a1a;border:1px solid #333;padding:20px;border-radius:16px;text-align:center;position:relative}
+.card.pop{border:2px solid #FFD500}.badge{background:#FFD500;color:#000;font-size:11px;font-weight:900;padding:4px 10px;border-radius:20px;position:absolute;top:-11px;left:50%;transform:translateX(-50%)}
+.card .apy{font-size:34px;color:#FFD500;font-weight:900}
+.card p{color:#aaa;font-size:13px;line-height:1.6;margin:8px 0}
+.card button{width:100%;padding:11px;background:#FFD500;border:none;border-radius:10px;font-weight:800;cursor:pointer}
+</style></head>
+<body>
+<div class="topbar">🔥 V2 LIVE - REFER & EARN 100 COINS - LEADERBOARD TOP 10 🔥</div>
+<div class="nav"><div class="logo">🤖 TURBO<span>26</span>ROBO</div><a href="index.html">⬅ Back to Game</a></div>
+<div class="hero">
+<h1>STAKE TURBO26<br><span>EARN MORE TURBO26</span></h1>
+<p>Game khelo, Coin kamao, Coin ko Lock karo, aur aur Coin kamao!</p>
+<button class="stake-btn" id="connectBtn" onclick="connectWallet()" style="max-width:300px">CONNECT WALLET</button>
+<p id="walletAddr" style="color:#2ecc71;margin-top:8px"></p>
+<div class="chain">
+<button id="btn-BNB" onclick="switchChain('BNB')" class="active" style="background:#F0B90B">🟡 BNB</button>
+<button id="btn-POLYGON" onclick="switchChain('POLYGON')" style="background:#7B3FE4;color:#fff">🟣 Polygon</button>
+<button id="btn-BASE" onclick="switchChain('BASE')" style="background:#0052FF;color:#fff">🔵 Base</button>
+</div>
+<div class="contract"><b id="chainStatus">BNB Chain</b><br>Token: 0x5a11075C985404288497c59778179b8fE2559d6d<br><a id="explorerLink" href="https://bscscan.com/token/0x5a11075C985404288497c59778179b8fE2559d6d" style="color:#FFD500">View on Explorer ↗</a></div>
+</div>
+<div class="calc">
+<h2 style="color:#FFD500">🧮 Calculator</h2>
+<label style="color:#aaa;font-size:13px">Kitna Stake karoge?</label>
+<input type="number" id="amount" value="1000" oninput="calc()">
+<div class="days">
+<button onclick="setDays(7,this)">7 Din - 5%</button>
+<button onclick="setDays(30,this)" class="active">30 Din - 15%</button>
+<button onclick="setDays(90,this)">90 Din - 35%</button>
+</div>
+<div style="display:flex;justify-content:space-between;background:#000;padding:14px;border-radius:10px"><div><small style="color:#aaa">Milega</small><br><b id="returnAmt" style="color:#FFD500;font-size:20px">1150</b></div><div><small style="color:#aaa">Profit</small><br><b id="profitAmt" style="color:#2ecc71">+150</b></div></div>
+<button class="stake-btn" onclick="stakeNow()">STAKE NOW 🚀</button>
+</div>
+<div class="plans">
+<div class="card"><h3>🏁 STARTER</h3><div class="apy">5%</div><p>7 Din<br>Min 260 Coin</p><button onclick="quickStake(260,7)">STAKE</button></div>
+<div class="card pop"><div class="badge">MOST POPULAR 🔥</div><h3>⚡ PRO</h3><div class="apy">15%</div><p>30 Din<br>Min 1000 Coin<br>+ Daily Free Turbo Boost</p><button onclick="quickStake(1000,30)">STAKE</button></div>
+<div class="card"><h3>👑 KING</h3><div class="apy">35%</div><p>90 Din<br>Min 5000 Coin<br>+ VIP Skin + King Tag</p><button onclick="quickStake(5000,90)">STAKE</button></div>
+</div>
+<p style="text-align:center;color:#555;font-size:12px;padding:20px">© TURBO26ROBO | Total Supply: 26M | Staking Pool: 5.2M</p>
+<script>
+const TOKEN="0x5a11075C985404288497c59778179b8fE2559d6d";
+let selectedChain='BNB', selectedDays=30, selectedRate=0.15, walletConnected=false;
+const EXP={BNB:"https://bscscan.com/token/"+TOKEN,POLYGON:"https://polygonscan.com/token/"+TOKEN,BASE:"https://basescan.org/token/"+TOKEN};
+function switchChain(c){selectedChain=c;document.querySelectorAll('.chain button').forEach(b=>b.classList.remove('active'));document.getElementById('btn-'+c).classList.add('active');document.getElementById('chainStatus').innerText=c+' Chain';document.getElementById('explorerLink').href=EXP[c];}
+function setDays(d,el){selectedDays=d;selectedRate=d===7?0.05:d===30?0.15:0.35;document.querySelectorAll('.days button').forEach(b=>b.classList.remove('active'));el.classList.add('active');calc();}
+function calc(){let a=parseFloat(document.getElementById('amount').value)||0;let p=Math.floor(a*selectedRate);document.getElementById('returnAmt').innerText=(a+p).toLocaleString('en-IN');document.getElementById('profitAmt').innerText='+'+p.toLocaleString('en-IN');}
+function connectWallet(){walletConnected=true;document.getElementById('walletAddr').innerText='Connected on '+selectedChain;document.getElementById('connectBtn').innerText='WALLET CONNECTED ✅';alert('Wallet Connected on '+selectedChain);}
+function stakeNow(){let a=parseFloat(document.getElementById('amount').value)||0;if(!walletConnected){alert('Pehle Wallet Connect Karo!');return;}if(a<260){alert('Min 260 Coin!');return;}alert('Success! '+a+' Coin Staked on '+selectedChain+'\n'+selectedDays+' din baad '+(a+Math.floor(a*selectedRate))+' milenge!');}
+function quickStake(a,d){document.getElementById('amount').value=a;selectedDays=d;selectedRate=d===7?0.05:d===30?0.15:0.35;calc();stakeNow();}
+calc();
+</script>
+</body></html>
